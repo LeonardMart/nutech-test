@@ -51,7 +51,7 @@ const LoginPage = () => {
       <div className="w-full space-y-12 bg-white px-14 py-14 h-full">
         <div className="flex flex-col space-y-4">
           <div className="flex flex-row space-x-2 items-center justify-center">
-            <img src="/img/Logo.png" alt="Logo" />
+            <img src="img/Logo.png" alt="Logo" />
             <div className="text-xl font-bold">SIMS PPOB</div>
           </div>
           <div className="text-xl font-bold text-center">

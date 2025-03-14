@@ -6,7 +6,7 @@ const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, yesBtn }) =>
   return (
     <Modal isOpen onClose>
       <div className="p-6 flex flex-col w-full text-center items-center justify-center space-y-6">
-        <img src="/img/Logo.png" alt="Logo" className="w-16 h-16" />
+        <img src="img/Logo.png" alt="Logo" className="w-16 h-16" />
 
         <div className="flex flex-col items-center justify-center">
           <div>{title}</div>

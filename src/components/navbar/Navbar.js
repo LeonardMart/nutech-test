@@ -8,7 +8,7 @@ export default function Navbar({ toggleSidebar }) {
     <nav className="sticky top-0 bg-white text-black p-4 flex items-center justify-between w-full border-b-[1px] px-40 z-50">
       <div className="flex flex-row items-center space-x-10">
         <Link to="/home" className="text-black flex flex-row items-center space-x-2">
-          <img src="/img/Logo.png" alt="Logo" />
+          <img src="img/Logo.png" alt="Logo" />
           <div className="font-bold">SIMS PPOB</div>
         </Link>
       </div>
