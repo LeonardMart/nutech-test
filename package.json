@@ -1,4 +1,5 @@
 {
+  "homepage":"https://leonardmart.github.io/nutech-test",
   "name": "his-ppob-leonard-ryo-martadi",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,7 @@
     "@umakantp/react-date-range": "^2.2.0",
     "axios": "^1.8.3",
     "cra-template": "1.2.0",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.475.0",
     "moment": "^2.30.1",
     "react": "^19.0.0",
@@ -22,7 +24,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "NODE_ENV=production BABEL_ENV=production node --max-old-space-size=512 node_modules/.bin/react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
