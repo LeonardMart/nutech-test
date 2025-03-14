@@ -35,6 +35,7 @@ export const useProfile = () => {
     } else {
       setIsLoaded(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return { fetchProfile, user, isLoaded };

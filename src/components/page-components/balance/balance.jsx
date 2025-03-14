@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import EyeIcon from "../../icon/eye-icon";
-import { useBalance } from "../../../hooks/useBalance";
 import { useSelector } from "react-redux";
 
 const BalanceComponent = () => {
@@ -10,10 +9,6 @@ const BalanceComponent = () => {
   const formattedBalance = (balance) => {
     return balance.toLocaleString("id-ID");
   };
-
-  useEffect(()=>{
-    console.log("balance",balance)
-  },[balance])
 
   return (
     <div className="relative">

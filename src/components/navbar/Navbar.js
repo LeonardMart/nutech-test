@@ -1,4 +1,3 @@
-import { X, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import moment from "moment";
 import "moment/locale/id";
