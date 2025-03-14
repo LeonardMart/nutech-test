@@ -44,7 +44,7 @@ export const useHttpRequest = (baseHttpUrl) => {
       console.log("response", response);
     } catch (err) {
       response = err.response;
-      if (err.status == 401) {
+      if (err.status === 401) {
         localStorage.removeItem("token");
         navigate("/");
       }

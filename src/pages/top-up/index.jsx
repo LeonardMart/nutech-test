@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useHttpRequest } from "../../hooks/useHttpRequests";
-import { useDispatch, useSelector } from "react-redux";
 import ProfileComponent from "../../components/page-components/profile/profile";
 import BalanceComponent from "../../components/page-components/balance/balance";
 import MoneyIcon from "../../components/icon/money-icon";
@@ -23,7 +22,7 @@ const TopUpPage = () => {
     "500000",
   ];
 
-  const { sendRequest, loading } = useHttpRequest(
+  const { sendRequest } = useHttpRequest(
     "https://take-home-test-api.nutech-integrasi.com"
   );
 
@@ -46,7 +45,7 @@ const TopUpPage = () => {
         },
       });
 
-      if (res.status == 0) {
+      if (res.status === 0) {
         await fetchBalance();
         setNotifModalType("success");
       } else {

@@ -20,17 +20,13 @@ const ServiceTransaction = () => {
   const [confirmModal, setConfirmModal] = useState(false);
   const [notifModal, setNotifModal] = useState(false);
   const [notifModalType, setNotifModalType] = useState("");
-  const { sendRequest, loading } = useHttpRequest(
+  const { sendRequest } = useHttpRequest(
     "https://take-home-test-api.nutech-integrasi.com"
   );
 
   const formatCurrency = (value) => {
     const numericValue = value.replace(/\D/g, "");
     return numericValue.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  };
-
-  const parseCurrency = (value) => {
-    return parseInt(value.replace(/\./g, ""), 10) || 0;
   };
 
   const onPay = async () => {
@@ -43,7 +39,7 @@ const ServiceTransaction = () => {
         },
       });
 
-      if (res.status == 0) {
+      if (res.status === 0) {
         await fetchBalance();
         setNotifModalType("success");
       } else {
@@ -89,7 +85,7 @@ const ServiceTransaction = () => {
           <div className="flex flex-col space-y-2">
             <div className="text-base">PemBayaran</div>
             <div className="flex flex-row items-center space-x-2">
-              <img src={icon} className="w-6 h-6" />
+              <img src={icon} alt="icon" className="w-6 h-6" />
               <div className="text-xl font-semibold">{service_name}</div>
             </div>
           </div>

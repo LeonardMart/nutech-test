@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import LockIcon from "../../components/icon/lock-icon";
 import ProfileIcon from "../../components/icon/profile-icon";
 import { useForm } from "react-hook-form";
@@ -29,18 +28,16 @@ const schema = yup.object().shape({
 const RegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const { sendRequest, loading } = useHttpRequest(
+  const { sendRequest } = useHttpRequest(
     "https://take-home-test-api.nutech-integrasi.com"
   );
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const password = watch("password");
 
   const onSubmit = async (data) => {
     try {
@@ -49,8 +46,7 @@ const RegisterPage = () => {
         method: "POST",
         body: data,
       });
-      //   localStorage.setItem("token", res.data.token);
-      if (res.status == 0) {
+      if (res.status === 0) {
         navigate("/home");
       }
     } catch (err) {

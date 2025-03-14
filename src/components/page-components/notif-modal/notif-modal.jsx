@@ -8,13 +8,13 @@ const NotifModal = ({ isOpen, onConfirm, title, message, type }) => {
   return (
     <Modal isOpen onClose>
       <div className="p-6 flex flex-col w-full text-center items-center justify-center space-y-6">
-        {type == "success" && (
+        {type === "success" && (
           <div className="bg-green-500 rounded-full p-6">
             <CheckIcon className="text-white w-12 h-12" />
           </div>
         )}
 
-        {type == "failed" && (
+        {type === "failed" && (
           <div className="bg-red-500 rounded-full p-6">
             <XIcon className="text-white" />
           </div>
@@ -23,8 +23,8 @@ const NotifModal = ({ isOpen, onConfirm, title, message, type }) => {
         <div className="flex flex-col items-center justify-center">
           <div>{title}</div>
           <div className="text-xl font-bold">{message}</div>
-          {type == "success" && <div>berhasil!</div>}
-          {type == "failed" && <div>gagal!</div>}
+          {type === "success" && <div>berhasil!</div>}
+          {type === "failed" && <div>gagal!</div>}
         </div>
 
         <div className="flex flex-col items-center justify-center mt-6">

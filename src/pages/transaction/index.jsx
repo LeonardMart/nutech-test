@@ -7,8 +7,8 @@ import moment from "moment";
 const TransactionPage = () => {
   const [transaction, setTransaction] = useState();
   const [limit, setLimit] = useState(5);
-  const [offset, setOffset] = useState(0);
-  const { sendRequest, loading } = useHttpRequest(
+  const offset = 0;
+  const { sendRequest } = useHttpRequest(
     "https://take-home-test-api.nutech-integrasi.com"
   );
 
@@ -23,7 +23,7 @@ const TransactionPage = () => {
         },
       });
 
-      if (res.status == 0) {
+      if (res.status === 0) {
         setTransaction(res.data.records);
       } else {
         // setNotifModalType("failed");
@@ -44,15 +44,11 @@ const TransactionPage = () => {
     return formattedDate;
   };
 
-  console.log(formatDate("2025-03-14T06:13:16.600Z")); // Output: "14 Maret 2025 13:16 WIB"
-
-  // Contoh penggunaan
-  const formattedDate = formatDate("2025-03-14T06:13:16.600Z");
-  console.log(formattedDate); // Output: "14 Maret 2025 13:16 WIB"
-
   useEffect(() => {
     fetchTransaction();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [limit]);
+
   return (
     <div className="flex flex-col space-y-12">
       <div className="flex flex-row w-full justify-between space-x-40">
@@ -74,12 +70,12 @@ const TransactionPage = () => {
                   <div className="flex flex-row justify-between">
                     <div
                       className={`text-lg font-semibold  ${
-                        item.transaction_type == "PAYMENT"
+                        item.transaction_type === "PAYMENT"
                           ? "text-red-500"
                           : "text-green-500"
                       }`}
                     >
-                      {item.transaction_type == "PAYMENT" ? "-" : "+"}
+                      {item.transaction_type === "PAYMENT" ? "-" : "+"}
                       Rp. {formattedBalance(item.total_amount)}
                     </div>
                     <div className="text-xs font-semibold">
@@ -94,7 +90,7 @@ const TransactionPage = () => {
             })}
         </div>
       </div>
-      {transaction && transaction.length == limit && (
+      {transaction && transaction.length === limit && (
         <div className="w-full items-center justify-center flex">
           <button
             onClick={() => setLimit(limit + 5)}

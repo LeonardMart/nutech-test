@@ -20,6 +20,7 @@ import TopUpPage from "./pages/top-up";
 import TransactionPage from "./pages/transaction";
 import ServiceTransaction from "./pages/transaction/serviceTransaction";
 import ProfilePage from "./pages/profile";
+import Logout from "./pages/auth/Logout";
 
 function App() {
   return (
@@ -37,10 +38,8 @@ function App() {
                 path="/service-transaction/:code"
                 element={<ServiceTransaction />}
               />
-              <Route
-                path="/profile"
-                element={<ProfilePage />}
-              />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/logout" element={<Logout />} />
             </Route>
           </Routes>
         </div>

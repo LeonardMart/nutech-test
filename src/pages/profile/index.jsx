@@ -7,6 +7,7 @@ import ProfileIcon from "../../components/icon/profile-icon";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const schema = yup.object().shape({
   first_name: yup.string().required("Nama depan harus diisi"),
@@ -14,7 +15,6 @@ const schema = yup.object().shape({
 });
 
 const ProfilePage = () => {
-  const [uploadedImage, setUploadedImage] = useState(null);
   const [editMode, setEditMode] = useState(false);
   const defaultImage = "/img/Profile Photo.png";
   const user = useSelector((state) => state.auth.userInfo);
@@ -25,7 +25,6 @@ const ProfilePage = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -68,7 +67,7 @@ const ProfilePage = () => {
 
       if (res.status === 0) {
         await fetchProfile();
-        setEditMode(false)
+        setEditMode(false);
       }
     } catch (err) {
       console.error("Image upload failed", err);
@@ -195,12 +194,13 @@ const ProfilePage = () => {
             >
               Edit Profile
             </button>
-            <button
+            <Link
+              to="/logout"
               type="submit"
-              className="w-full bg-white text-red-500 py-2 rounded-sm border-[1px] border-red-500 transition hover:bg-red-50"
+              className="w-full bg-white text-center text-red-500 py-2 rounded-sm border-[1px] border-red-500 transition hover:bg-red-50"
             >
               Logout
-            </button>
+            </Link>
           </>
         )}
       </form>
