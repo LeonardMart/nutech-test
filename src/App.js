@@ -1,14 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import LoginPage from "./pages/auth/login";
-// import RegisterPage from "./pages/RegisterPage";
-// import ProfilePage from "./pages/ProfilePage";
-// import HomePage from "./pages/HomePage";
-// import TopUpPage from "./pages/TopUpPage";
-// import PaymentPage from "./pages/PaymentPage";
-// import TransactionHistoryPage from "./pages/TransactionHistoryPage";
-// import { Provider } from "react-redux";
-// import store from "./redux/store";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import "./index.css"; // Import Tailwind CSS
 import LoginPage from "./pages/auth/Login";
 import RegisterPage from "./pages/auth/Register";
