@@ -228,7 +228,7 @@ const RegisterPage = () => {
         </form>
       </div>
       <img
-        src="/img/Illustrasi Login.png"
+        src="img/Illustrasi Login.png"
         className="max-h-screen"
         alt="Illustrasi Login"
       />

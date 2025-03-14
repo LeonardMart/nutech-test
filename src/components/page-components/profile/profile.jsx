@@ -1,7 +1,7 @@
 import { useProfile } from "../../../hooks/useProfile";
 
 const ProfileComponent = () => {
-  const defaultImage = "/img/Profile Photo.png";
+  const defaultImage = "img/Profile Photo.png";
   const { isLoaded, user } = useProfile();
   return (
     <>

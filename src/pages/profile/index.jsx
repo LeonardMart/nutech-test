@@ -16,7 +16,7 @@ const schema = yup.object().shape({
 
 const ProfilePage = () => {
   const [editMode, setEditMode] = useState(false);
-  const defaultImage = "/img/Profile Photo.png";
+  const defaultImage = "img/Profile Photo.png";
   const user = useSelector((state) => state.auth.userInfo);
   const { sendRequest } = useHttpRequest(
     "https://take-home-test-api.nutech-integrasi.com"

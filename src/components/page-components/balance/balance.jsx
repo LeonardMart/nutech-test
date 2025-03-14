@@ -13,7 +13,7 @@ const BalanceComponent = () => {
   return (
     <div className="relative">
       <img
-        src="/img/Background Saldo.png"
+        src="img/Background Saldo.png"
         alt="Background Saldo"
         className="w-full h-full"
       />
