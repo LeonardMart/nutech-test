@@ -35,7 +35,7 @@ export const useBalance = () => {
       fetchBalance();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   return { fetchBalance, isLoaded };
 };

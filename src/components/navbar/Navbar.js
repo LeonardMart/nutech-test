@@ -1,19 +1,8 @@
-import { useState, useEffect } from "react";
-import moment from "moment";
 import "moment/locale/id";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar({ toggleSidebar }) {
-  const location = useLocation(); // Get current route
-  const [time, setTime] = useState("");
-
-  useEffect(() => {
-    moment.locale("id");
-    const updateTime = () => setTime(moment().format("HH:mm:ss, DD MMMM YYYY"));
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  const location = useLocation();
 
   return (
     <nav className="sticky top-0 bg-white text-black p-4 flex items-center justify-between w-full border-b-[1px] px-40 z-50">

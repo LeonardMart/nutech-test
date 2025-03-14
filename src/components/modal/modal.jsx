@@ -1,6 +1,5 @@
-import { X } from "lucide-react";
 
-const Modal = ({ isOpen, onClose, title, children }) => {
+const Modal = ({ isOpen, children }) => {
   if (!isOpen) return null;
 
   return (
