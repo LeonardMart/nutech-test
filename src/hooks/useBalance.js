@@ -28,7 +28,7 @@ export const useBalance = () => {
     } finally {
       setIsLoaded(true);
     }
-  }, [sendRequest]);
+  }, [sendRequest, dispatch]);
 
   useEffect(() => {
     if (!balance) {
